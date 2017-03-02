@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50.0dip"
+    android:background="#b3051032">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:textColor="#ffffffff"
+        android:textSize="17.0sp" />
+
+    <ImageView
+        android:id="@+id/back_btn"
+        android:layout_width="50.0dip"
+        android:layout_height="50.0dip"
+        android:scaleType="center"
+        android:src="@drawable/back" />
+</RelativeLayout>

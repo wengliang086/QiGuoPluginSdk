@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="#ff3d4052" android:paddingLeft="15.0dip" android:paddingTop="13.0dip" android:paddingRight="15.0dip" android:paddingBottom="13.0dip" android:layout_width="0.0dip" android:layout_height="121.0dip" android:layout_marginTop="10.0dip" android:layout_weight="1.0">
+        <TextView android:textSize="15.0sp" android:textColor="#ffffb527" android:id="@id/tv_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="七果元旦大回馈" android:maxLines="1" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+            <TextView android:textSize="13.0sp" android:textColor="#ffcccccc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="兑换码：" />
+            <TextView android:textSize="13.0sp" android:textColor="#ffffffff" android:id="@id/tv_key" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="6S8Q91KH" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+            <TextView android:textSize="13.0sp" android:textColor="#ffcccccc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="内    容：" />
+            <TextView android:textSize="13.0sp" android:textColor="#ffffffff" android:id="@id/tv_des" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="二等生命宝石*1，下品破境丹*20，讨伐令（紫）*3" />
+        </LinearLayout>
+    </LinearLayout>
+    <TextView android:textSize="15.0sp" android:textColor="#ffffb527" android:gravity="center" android:id="@id/tv_copy" android:background="#ff1f243a" android:layout_width="50.0dip" android:layout_height="fill_parent" android:layout_marginTop="10.0dip" android:text="复\n制" />
+</LinearLayout>

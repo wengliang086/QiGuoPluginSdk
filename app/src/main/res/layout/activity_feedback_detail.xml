@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fff2f2f2"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_full_screen_toolbar" />
+
+    <ListView
+        android:id="@+id/rv_feedback_detail"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_marginTop="10.0dip"
+        android:layout_weight="1.0" />
+
+    <TextView
+        android:id="@+id/tv_go_to_app"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffff5757"
+        android:gravity="center"
+        android:paddingBottom="17.0dip"
+        android:paddingTop="18.0dip"
+        android:text="打开七果APP，继续追问"
+        android:textColor="#ffffffff"
+        android:textSize="15.0sp" />
+</LinearLayout>

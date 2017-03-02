@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#b3040c27"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/person_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="100.0dip"
+        android:background="#b3051032"
+        android:padding="16.0dip">
+
+        <ImageView
+            android:id="@+id/icon_img"
+            android:layout_width="60.0dip"
+            android:layout_height="60.0dip"
+            android:layout_centerVertical="true"
+            android:src="@drawable/logo" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8.0dip"
+            android:layout_toRightOf="@id/icon_img">
+
+            <TextView
+                android:id="@+id/nick_name"
+                android:layout_width="120.0dip"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:textColor="#ffffffff"
+                android:textSize="17.0sp" />
+
+            <TextView
+                android:id="@+id/level"
+                android:layout_width="wrap_content"
+                android:layout_height="16.0dip"
+                android:layout_alignBottom="@id/nick_name"
+                android:layout_marginLeft="6.0dip"
+                android:layout_toRightOf="@id/nick_name"
+                android:background="@drawable/lv_bg"
+                android:gravity="center"
+                android:paddingLeft="8.0dip"
+                android:paddingRight="8.0dip"
+                android:textColor="#ffff5757"
+                android:textSize="10.0sp" />
+
+            <TextView
+                android:id="@+id/use_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nick_name"
+                android:layout_marginTop="4.0dip"
+                android:textColor="#ff999999"
+                android:textSize="13.0sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/coin_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/person_layout"
+        android:paddingBottom="20.0dip"
+        android:paddingLeft="16.0dip"
+        android:paddingRight="16.0dip"
+        android:paddingTop="20.0dip">
+
+        <TextView
+            android:id="@+id/coin_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="平台币余额"
+            android:textColor="#ffe3e3e3"
+            android:textSize="15.0sp" />
+
+        <TextView
+            android:id="@+id/coin_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/coin_label"
+            android:layout_marginTop="10.0dip"
+            android:textColor="#ffffffff"
+            android:textSize="32.0sp" />
+
+        <TextView
+            android:id="@+id/recharge_btn"
+            android:layout_width="83.0dip"
+            android:layout_height="30.0dip"
+            android:layout_alignBottom="@id/coin_num"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/recharge_btn_bg"
+            android:gravity="center"
+            android:text="立即充值"
+            android:textColor="#ffffffff"
+            android:textSize="15.0sp" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_below="@id/coin_layout"
+        android:background="#ff999999" />
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:layout_alignParentBottom="true"
+        android:background="#b3051032">
+
+        <TextView
+            android:id="@+id/auto_login_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="18.0dip"
+            android:text="自动登陆"
+            android:textColor="#ffe3e3e3"
+            android:textSize="15.0sp" />
+
+        <com.kding.view.SlideSwitch
+            android:id="@+id/qxz_menu_autologin"
+            android:layout_width="40.0dip"
+            android:layout_height="20.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="20.0dip"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/content_layout_1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/line"
+        android:layout_marginLeft="16.0dip"
+        android:layout_marginRight="16.0dip"
+        android:layout_marginTop="32.0dip"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0">
+
+            <TextView
+                android:id="@+id/notify_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawablePadding="8.0dip"
+                android:drawableTop="@drawable/notify"
+                android:gravity="center"
+                android:text="七果通知"
+                android:textColor="#ffffffff"
+                android:textSize="13.0sp" />
+
+            <ImageView
+                android:id="@+id/notify_btn_point"
+                android:layout_width="8.0dip"
+                android:layout_height="8.0dip"
+                android:layout_gravity="right"
+                android:layout_marginRight="24.0dip"
+                android:background="@drawable/point_bg"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0">
+
+            <TextView
+                android:id="@+id/gift_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0"
+                android:drawablePadding="8.0dip"
+                android:drawableTop="@drawable/gift"
+                android:gravity="center"
+                android:text="游戏礼包"
+                android:textColor="#ffffffff"
+                android:textSize="13.0sp" />
+
+            <ImageView
+                android:id="@+id/gift_btn_point"
+                android:layout_width="8.0dip"
+                android:layout_height="8.0dip"
+                android:layout_gravity="right"
+                android:layout_marginRight="24.0dip"
+                android:background="@drawable/point_bg"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/coupon_btn"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:drawablePadding="8.0dip"
+            android:drawableTop="@drawable/coupon"
+            android:gravity="center"
+            android:text="代金券"
+            android:textColor="#ffffffff"
+            android:textSize="13.0sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/content_layout_2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/content_layout_1"
+        android:layout_marginLeft="16.0dip"
+        android:layout_marginRight="16.0dip"
+        android:layout_marginTop="32.0dip"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/setting_btn"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:drawablePadding="8.0dip"
+            android:drawableTop="@drawable/setting"
+            android:gravity="center"
+            android:text="个人设置"
+            android:textColor="#ffffffff"
+            android:textSize="13.0sp" />
+
+        <TextView
+            android:id="@+id/motify_btn"
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:drawablePadding="8.0dip"
+            android:drawableTop="@drawable/motify"
+            android:gravity="center"
+            android:text="修改密码"
+            android:textColor="#ffffffff"
+            android:textSize="13.0sp" />
+
+        <FrameLayout
+            android:layout_width="0.0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0">
+
+            <TextView
+                android:id="@+id/feed_back_btn"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:drawablePadding="8.0dip"
+                android:drawableTop="@drawable/feed_back"
+                android:gravity="center"
+                android:text="问题反馈"
+                android:textColor="#ffffffff"
+                android:textSize="13.0sp" />
+
+            <ImageView
+                android:id="@+id/feed_back_btn_point"
+                android:layout_width="8.0dip"
+                android:layout_height="8.0dip"
+                android:layout_gravity="right"
+                android:layout_marginRight="24.0dip"
+                android:background="@drawable/point_bg"
+                android:visibility="gone" />
+        </FrameLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/qxz_layout_4_phone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/sdk_dialog_login_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal">
+            <ImageView
+                android:id="@+id/sdk_dialog_login_img_logo"
+                android:layout_width="50.0dip"
+                android:layout_height="50.0dip"
+                android:src="@drawable/sdk_logo" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/sdk_dialog_login_img_logo">
+
+                <ImageView
+                    android:id="@+id/sdk_dialog_login_text_logo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2.0dip"
+                    android:src="@drawable/sdk_text_logo" />
+
+                <TextView
+                    android:id="@+id/sdk_dialog_login_title"
+                    android:layout_width="145.0dip"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/sdk_dialog_login_text_logo"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="2.0dip"
+                    android:maxLines="1"
+                    android:text="@string/qxz_login_title"
+                    android:textColor="@android:color/white"
+                    android:textSize="13.0sp" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="11.0dip"
+            android:background="@drawable/sdk_dialog_login_phone_bg"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/sdk_dialog_login_phone_name"
+                android:layout_width="0.0dip"
+                android:layout_height="18.0dip"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.0"
+                android:background="#ffffffff"
+                android:hint="@string/qxz_login_phonenumber_hint"
+                android:inputType="phone"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textColorHint="#ff727272"
+                android:textSize="15.0sp" />
+
+            <ImageView
+                android:id="@+id/sdk_dialog_login_clear"
+                android:layout_width="12.0dip"
+                android:layout_height="12.0dip"
+                android:layout_marginLeft="15.0dip"
+                android:src="@drawable/sdk_edittext_clear"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:background="#ffe2e2e2" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/sdk_dialog_login_pwd_bg"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/sdk_dialog_login_sms_pwd"
+                android:layout_width="0.0dip"
+                android:layout_height="18.0dip"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.0"
+                android:background="#ffffffff"
+                android:hint="@string/qxz_login_indentify_code_hint"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColor="@android:color/black"
+                android:textColorHint="#ff727272"
+                android:textSize="15.0sp" />
+
+            <TextView
+                android:id="@+id/sdk_dialog_login_sendvcode"
+                android:layout_width="67.0dip"
+                android:layout_height="16.0dip"
+                android:layout_marginLeft="15.0dip"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@string/qxz_login_indentify_code_get"
+                android:textColor="#ffff5757"
+                android:textSize="13.0sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/sdk_dialog_login_button"
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20.0dip"
+            android:background="@drawable/sdk_dialog_login_button_bg"
+            android:text="@string/qxz_login"
+            android:textColor="@android:color/white"
+            android:textSize="15.0sp" />
+
+        <TextView
+            android:id="@+id/sdk_dialog_login_switcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="18.0dip"
+            android:drawablePadding="3.0dip"
+            android:drawableRight="@drawable/sdk_arrow_right"
+            android:gravity="center"
+            android:text="@string/qxz_login_use_password"
+            android:textColor="#ffffffff"
+            android:textSize="13.0sp" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+</FrameLayout>

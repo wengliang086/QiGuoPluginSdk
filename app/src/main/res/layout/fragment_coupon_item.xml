@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="10.0dip"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#ff3d4052"
+        android:paddingBottom="12.0dip"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="15.0dip"
+        android:paddingTop="12.0dip">
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="7.0dip"
+            android:maxLines="1"
+            android:text="￥6"
+            android:textColor="#ffffb527"
+            android:textSize="20.0sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/tv_price"
+            android:maxEms="12"
+            android:maxLines="1"
+            android:text="首充代金券首充代金券首充代金券首充代金券首充代金券首充代金券首充代金券首充代金券"
+            android:textColor="#ffffffff"
+            android:textSize="15.0sp" />
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_price"
+            android:layout_marginTop="8.0dip"
+            android:text="在平台任意游戏内首次消费时可抵扣相应的费用，单次最多只可使用一张。"
+            android:textColor="#ffcccccc"
+            android:textSize="15.0sp" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="30.0dip"
+        android:background="#ff1f243a"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="14.0dip"
+        android:paddingRight="14.0dip">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="使用期限："
+            android:textColor="#ffffb527"
+            android:textSize="13.0sp" />
+
+        <TextView
+            android:id="@+id/tv_deadline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text="2017-01-22 - 2017-01-30"
+            android:textColor="#ffffb527"
+            android:textSize="13.0sp" />
+    </LinearLayout>
+</LinearLayout>

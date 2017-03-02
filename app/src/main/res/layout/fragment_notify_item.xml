@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10.0dip"
+        android:background="@drawable/list_item_bg"
+        android:paddingLeft="15.0dip"
+        android:paddingRight="11.0dip">
+
+        <TextView
+            android:id="@+id/tv_notify_is_read"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="13.0dip"
+            android:background="@drawable/notify_state_not_read"
+            android:maxLines="1"
+            android:text="未读"
+            android:textColor="#ffffffff"
+            android:textSize="10.0sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="13.0dip"
+            android:layout_marginLeft="10.0dip"
+            android:layout_marginTop="14.0dip"
+            android:layout_toRightOf="@id/tv_notify_is_read"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_notify_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxEms="12"
+                android:maxLines="1"
+                android:text="七果元旦大回馈"
+                android:textColor="#ffffffff"
+                android:textSize="15.0sp" />
+
+            <TextView
+                android:id="@+id/tv_notify_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5.0dip"
+                android:maxLines="1"
+                android:text="2017.01.03 20：34：24"
+                android:textColor="#ffcccccc"
+                android:textSize="13.0sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="6.0dip"
+            android:layout_height="11.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/sdk_arrow_right" />
+    </RelativeLayout>
+</LinearLayout>

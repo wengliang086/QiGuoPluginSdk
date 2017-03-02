@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="48.0dip">
+
+    <FrameLayout
+        android:id="@+id/qxz_float_view"
+        android:layout_width="48.0dip"
+        android:layout_height="48.0dip">
+
+        <ImageView
+            android:id="@+id/qxz_float_view_icon_imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left" />
+
+        <ImageView
+            android:id="@+id/qxz_float_view_icon_notify"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/new_point"
+            android:layout_width="14.0dip"
+            android:layout_height="14.0dip"
+            android:layout_gravity="right" />
+    </FrameLayout>
+</FrameLayout>

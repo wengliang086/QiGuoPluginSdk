@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/sdk_dialog_pay_bg"
+        android:paddingBottom="15.0dip"
+        android:paddingLeft="20.0dip"
+        android:paddingRight="20.0dip"
+        android:paddingTop="20.0dip">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/qxz_pay_center_title"
+            android:textColor="#ffffb527"
+            android:textSize="17.0sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_money"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_title"
+            android:layout_marginTop="20.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="充值金额："
+                android:textColor="#ffffffff"
+                android:textSize="15.0sp" />
+
+            <TextView
+                android:id="@+id/tv_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:maxLines="1"
+                android:textColor="#ffff5757"
+                android:textSize="15.0sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/rl_coupon"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_money"
+            android:layout_marginTop="15.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/qxz_pay_coupons"
+                android:textColor="#ffffffff"
+                android:textSize="15.0sp" />
+
+            <FrameLayout
+                android:layout_width="0.0dip"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_weight="1.0"
+                android:background="@drawable/sdk_dialog_pay_spinner_bg"
+                android:paddingLeft="9.0dip"
+                android:paddingRight="10.0dip">
+
+                <ImageView
+                    android:layout_width="9.0dip"
+                    android:layout_height="4.0dip"
+                    android:layout_gravity="center|right"
+                    android:src="@drawable/spinner_arrow_down" />
+
+                <Spinner
+                    android:id="@+id/sp_coupon"
+                    android:layout_width="fill_parent"
+                    android:layout_height="30.0dip"
+                    android:layout_marginRight="9.0dip"
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:spinnerMode="dropdown" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_deduction"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_coupon"
+            android:layout_marginTop="15.0dip">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="代金券折扣："
+                android:textColor="#ffffffff"
+                android:textSize="15.0sp" />
+
+            <TextView
+                android:id="@+id/tv_deduction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:maxLines="1"
+                android:textColor="#ffff5757"
+                android:textSize="15.0sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_pay_way"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_deduction"
+            android:layout_marginTop="19.0dip"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_ali_pay"
+                android:layout_width="0.0dip"
+                android:layout_height="50.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/sdk_dialog_payway_bg_nor"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_ali_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/qxz_alipay_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_union_pay"
+                android:layout_width="0.0dip"
+                android:layout_height="50.0dip"
+                android:layout_marginLeft="15.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/sdk_dialog_payway_bg_nor"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_union_pay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/qxz_union_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_coin_pay"
+                android:layout_width="0.0dip"
+                android:layout_height="50.0dip"
+                android:layout_marginLeft="15.0dip"
+                android:layout_weight="1.0"
+                android:background="@drawable/sdk_dialog_payway_bg_nor"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_coin_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:maxLines="1"
+                    android:text="平台币"
+                    android:textColor="#ffff5757"
+                    android:textSize="13.0sp" />
+
+                <TextView
+                    android:id="@+id/tv_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3.0dip"
+                    android:maxLines="1"
+                    android:text="0"
+                    android:textColor="#ffff5757"
+                    android:textSize="13.0sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_pay"
+            android:layout_width="fill_parent"
+            android:layout_height="40.0dip"
+            android:layout_below="@id/ll_pay_way"
+            android:layout_marginTop="15.0dip"
+            android:background="@drawable/sdk_dialog_login_button_bg"
+            android:text="需要支付x元，请点击支付"
+            android:textColor="#ffffffff"
+            android:textSize="15.0sp" />
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <ImageView
+            android:id="@+id/close_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/close" />
+    </RelativeLayout>
+</FrameLayout>

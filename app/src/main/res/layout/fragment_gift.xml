@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#b3040c27"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/gift_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dip"
+        android:layout_weight="1.0"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="40.0dip"
+        android:background="#b3051032"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/group_gift"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0">
+
+            <TextView
+                android:id="@+id/tv_gift"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="礼包福利"
+                android:textColor="#ffff5757"
+                android:textSize="15.0sp" />
+
+            <ImageView
+                android:id="@+id/iv_gift"
+                android:layout_width="10.0dip"
+                android:layout_height="4.0dip"
+                android:layout_gravity="bottom|center"
+                android:src="@drawable/gift_triangle" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/group_my_gift"
+            android:layout_width="0.0dip"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0">
+
+            <TextView
+                android:id="@+id/tv_my_gift"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="我的礼包"
+                android:textColor="#ff999999"
+                android:textSize="15.0sp" />
+
+            <ImageView
+                android:id="@+id/iv_my_gift"
+                android:layout_width="10.0dip"
+                android:layout_height="4.0dip"
+                android:layout_gravity="bottom|center"
+                android:src="@drawable/gift_triangle"
+                android:visibility="invisible" />
+        </FrameLayout>
+    </LinearLayout>
+</LinearLayout>
