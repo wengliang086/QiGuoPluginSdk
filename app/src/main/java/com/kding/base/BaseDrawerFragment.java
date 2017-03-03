@@ -6,19 +6,16 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.FragmentManager;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
-import android.view.Window;
-import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 
+import com.kding.R;
 import com.kding.utils.FragmentHelper;
 import com.kding.utils.SystemUtils;
 import com.nineoldandroids.animation.ObjectAnimator;
@@ -86,7 +83,7 @@ public abstract class BaseDrawerFragment
 
     public void onCreate(Bundle paramBundle) {
         super.onCreate(paramBundle);
-        setStyle(0, 2131165186);
+        setStyle(0, R.style.QxzMyDialogStyle);
     }
 
     public Dialog onCreateDialog(Bundle paramBundle) {
@@ -167,9 +164,3 @@ public abstract class BaseDrawerFragment
         }
     }
 }
-
-
-/* Location:              C:\Users\Administrator\Desktop\app-debug\assets\app\classes_dex2jar.jar!\com\kding\base\BaseDrawerFragment.class
- * Java compiler version: 6 (50.0)
- * JD-Core Version:       0.7.1
- */

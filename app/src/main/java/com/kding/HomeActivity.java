@@ -9,8 +9,7 @@ import com.kding.utils.FragmentHelper;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeActivity
-        extends Activity
+public class HomeActivity extends Activity
         implements FragmentHelper {
     private CouponFragment couponFragment;
     boolean end;
@@ -68,9 +67,3 @@ public class HomeActivity
         ((BaseDrawerFragment) this.mFragmentList.get(paramInt)).show(getFragmentManager(), this.tags[paramInt]);
     }
 }
-
-
-/* Location:              C:\Users\Administrator\Desktop\app-debug\assets\app\classes_dex2jar.jar!\com\kding\HomeActivity.class
- * Java compiler version: 6 (50.0)
- * JD-Core Version:       0.7.1
- */
