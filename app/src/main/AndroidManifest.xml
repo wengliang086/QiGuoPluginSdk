@@ -32,6 +32,11 @@
             android:screenOrientation="behind"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity android:name=".HomeActivity" />
+        <activity android:name=".ModifyPwActivity" />
+        <activity android:name=".GotoAppActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".PayCenterActivity" />
+        <activity android:name=".WebActivity" />
     </application>
 
 </manifest>

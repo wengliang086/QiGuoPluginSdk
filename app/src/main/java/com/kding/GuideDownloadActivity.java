@@ -4,19 +4,17 @@ import android.app.Activity;
 import android.os.Bundle;
 
 public class GuideDownloadActivity
-  extends Activity
-{
-  private GuideDownloadFragment guideDownloadFragment;
-  
-  protected void onCreate(Bundle paramBundle)
-  {
-    super.onCreate(paramBundle);
-    setContentView(2130903045);
-    if (this.guideDownloadFragment == null) {
-      this.guideDownloadFragment = new GuideDownloadFragment();
+        extends Activity {
+    private GuideDownloadFragment guideDownloadFragment;
+
+    protected void onCreate(Bundle paramBundle) {
+        super.onCreate(paramBundle);
+        setContentView(R.layout.empty);
+        if (this.guideDownloadFragment == null) {
+            this.guideDownloadFragment = new GuideDownloadFragment();
+        }
+        this.guideDownloadFragment.show(getFragmentManager(), "");
     }
-    this.guideDownloadFragment.show(getFragmentManager(), "");
-  }
 }
 
 

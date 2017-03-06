@@ -5,24 +5,21 @@ import android.content.Intent;
 import android.os.Bundle;
 
 public class GotoAppActivity
-  extends Activity
-{
-  private GotoAppFragment gotoAppFragment;
-  
-  protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent)
-  {
-    this.gotoAppFragment.onActivityResult(paramInt1, paramInt2);
-  }
-  
-  protected void onCreate(Bundle paramBundle)
-  {
-    super.onCreate(paramBundle);
-    setContentView(2130903045);
-    if (this.gotoAppFragment == null) {
-      this.gotoAppFragment = new GotoAppFragment();
+        extends Activity {
+    private GotoAppFragment gotoAppFragment;
+
+    protected void onActivityResult(int paramInt1, int paramInt2, Intent paramIntent) {
+        this.gotoAppFragment.onActivityResult(paramInt1, paramInt2);
     }
-    this.gotoAppFragment.show(getFragmentManager(), "");
-  }
+
+    protected void onCreate(Bundle paramBundle) {
+        super.onCreate(paramBundle);
+        setContentView(R.layout.empty);
+        if (this.gotoAppFragment == null) {
+            this.gotoAppFragment = new GotoAppFragment();
+        }
+        this.gotoAppFragment.show(getFragmentManager(), "");
+    }
 }
 
 
