@@ -3,85 +3,72 @@ package com.kding.qxzapi;
 import com.kding.api.QiGuoCallBack;
 import com.kding.qiguo.OnStartActivityFromPlugin;
 
-public enum QiGuoInfo
-{
-  INSTANCE;
+public enum QiGuoInfo {
+    INSTANCE;
 
-  private String appId;
-  private String channel;
-  private boolean mEnable = false;
-  private QiGuoCallBack mQiGuoCallBack;
-  private OnStartActivityFromPlugin onStartActivityFromPlugin;
-  private boolean showToast = true;
-  private String uid;
+    private String appId;
+    private String channel;
+    private boolean mEnable = false;
+    private QiGuoCallBack mQiGuoCallBack;
+    private OnStartActivityFromPlugin onStartActivityFromPlugin;
+    private boolean showToast = true;
+    private String uid;
 
-  private QiGuoInfo() {}
-
-  public String getAppId()
-  {
-    return this.appId;
-  }
-
-  public String getBaseUrl()
-  {
-    if (this.mEnable) {
-      return "http://sdk2.7xz.com/";
+    private QiGuoInfo() {
     }
-    return "http://sdk2.7xz.com/";
-  }
 
-  public String getChannel()
-  {
-    return this.channel;
-  }
+    public String getAppId() {
+        return this.appId;
+    }
 
-  public OnStartActivityFromPlugin getOnStartActivityFromPlugin()
-  {
-    return this.onStartActivityFromPlugin;
-  }
+    public String getBaseUrl() {
+        if (this.mEnable) {
+            return "http://sdk2.7xz.com/";
+        }
+        return "http://sdk2.7xz.com/";
+    }
 
-  public QiGuoCallBack getQiGuoCallBack()
-  {
-    return this.mQiGuoCallBack;
-  }
+    public String getChannel() {
+        return this.channel;
+    }
 
-  public String getUid()
-  {
-    return this.uid;
-  }
+    public OnStartActivityFromPlugin getOnStartActivityFromPlugin() {
+        return this.onStartActivityFromPlugin;
+    }
 
-  public boolean isShowToast()
-  {
-    return this.showToast;
-  }
+    public QiGuoCallBack getQiGuoCallBack() {
+        return this.mQiGuoCallBack;
+    }
 
-  public void setAppId(String paramString)
-  {
-    this.appId = paramString;
-  }
+    public String getUid() {
+        return this.uid;
+    }
 
-  public void setChannel(String paramString)
-  {
-    this.channel = paramString;
-  }
+    public boolean isShowToast() {
+        return this.showToast;
+    }
 
-  public void setOnStartActivityFromPlugin(OnStartActivityFromPlugin paramOnStartActivityFromPlugin)
-  {
-    this.onStartActivityFromPlugin = paramOnStartActivityFromPlugin;
-  }
+    public void setAppId(String paramString) {
+        this.appId = paramString;
+    }
 
-  public void setQiGuoCallBack(QiGuoCallBack paramQiGuoCallBack)
-  {
-    this.mQiGuoCallBack = paramQiGuoCallBack;
-  }
+    public void setChannel(String paramString) {
+        this.channel = paramString;
+    }
 
-  public void setShowToast(boolean paramBoolean)
-  {
-    this.showToast = paramBoolean;
-  }
+    public void setOnStartActivityFromPlugin(OnStartActivityFromPlugin paramOnStartActivityFromPlugin) {
+        this.onStartActivityFromPlugin = paramOnStartActivityFromPlugin;
+    }
 
-  public void setUid(String paramString)
-  {
-    this.uid = paramString;
-  }
+    public void setQiGuoCallBack(QiGuoCallBack paramQiGuoCallBack) {
+        this.mQiGuoCallBack = paramQiGuoCallBack;
+    }
+
+    public void setShowToast(boolean paramBoolean) {
+        this.showToast = paramBoolean;
+    }
+
+    public void setUid(String paramString) {
+        this.uid = paramString;
+    }
 }

@@ -37,6 +37,9 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".PayCenterActivity" />
         <activity android:name=".WebActivity" />
+        <activity android:name=".GuideDownloadActivity" />
+        <activity android:name=".GetGiftActivity" />
+        <activity android:name=".FeedbackDetailActivity" />
     </application>
 
 </manifest>

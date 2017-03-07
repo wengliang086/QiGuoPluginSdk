@@ -5,7 +5,6 @@
 
 package com.kding.core.plugin.utils;
 
-import com.kding.core.plugin.utils.XmlResourceParser;
 import java.io.File;
 import java.io.IOException;
 import java.util.zip.ZipEntry;
@@ -32,16 +31,14 @@ class XmlManifestReader {
         } catch (Exception var13) {
             var13.printStackTrace();
         } finally {
-            if(file != null) {
+            if (file != null) {
                 try {
                     file.close();
                 } catch (IOException var12) {
                     var12.printStackTrace();
                 }
             }
-
         }
-
         return rs;
     }
 
@@ -55,10 +52,10 @@ class XmlManifestReader {
             StringBuilder e = new StringBuilder(10);
             String indentStep = "\t";
 
-            while(true) {
+            while (true) {
                 int type;
-                while((type = parser.next()) != 1) {
-                    switch(type) {
+                while ((type = parser.next()) != 1) {
+                    switch (type) {
                         case 0:
                             log(xmlSb, "<?xml version=\"1.0\" encoding=\"utf-8\"?>", new Object[0]);
                         case 1:
@@ -71,13 +68,13 @@ class XmlManifestReader {
                             int namespaceCount = parser.getNamespaceCount(parser.getDepth());
 
                             int i;
-                            for(i = namespaceCountBefore; i != namespaceCount; ++i) {
-                                log(xmlSb, "%sxmlns:%s=\"%s\"", new Object[]{i == namespaceCountBefore?"  ":e, parser.getNamespacePrefix(i), parser.getNamespaceUri(i)});
+                            for (i = namespaceCountBefore; i != namespaceCount; ++i) {
+                                log(xmlSb, "%sxmlns:%s=\"%s\"", new Object[]{i == namespaceCountBefore ? "  " : e, parser.getNamespacePrefix(i), parser.getNamespaceUri(i)});
                             }
 
                             i = 0;
 
-                            for(int size = parser.getAttributeCount(); i != size; ++i) {
+                            for (int size = parser.getAttributeCount(); i != size; ++i) {
                                 log(false, xmlSb, "%s%s%s=\"%s\"", new Object[]{" ", getNamespacePrefix(parser.getAttributePrefix(i)), parser.getAttributeName(i), getAttributeValue(parser, i)});
                             }
 
@@ -104,17 +101,17 @@ class XmlManifestReader {
     }
 
     private static String getNamespacePrefix(String prefix) {
-        return prefix != null && prefix.length() != 0?prefix + ":":"";
+        return prefix != null && prefix.length() != 0 ? prefix + ":" : "";
     }
 
     private static String getAttributeValue(XmlResourceParser parser, int index) {
         int type = parser.getAttributeValueType(index);
         int data = parser.getAttributeValueData(index);
-        return type == 3?parser.getAttributeValue(index):(type == 2?String.format("?%s%08X", new Object[]{getPackage(data), Integer.valueOf(data)}):(type == 1?String.format("@%s%08X", new Object[]{getPackage(data), Integer.valueOf(data)}):(type == 4?String.valueOf(Float.intBitsToFloat(data)):(type == 17?String.format("0x%08X", new Object[]{Integer.valueOf(data)}):(type == 18?(data != 0?"true":"false"):(type == 5?Float.toString(complexToFloat(data)) + DIMENSION_UNITS[data & 15]:(type == 6?Float.toString(complexToFloat(data)) + FRACTION_UNITS[data & 15]:(type >= 28 && type <= 31?String.format("#%08X", new Object[]{Integer.valueOf(data)}):(type >= 16 && type <= 31?String.valueOf(data):String.format("<0x%X, type 0x%02X>", new Object[]{Integer.valueOf(data), Integer.valueOf(type)}))))))))));
+        return type == 3 ? parser.getAttributeValue(index) : (type == 2 ? String.format("?%s%08X", new Object[]{getPackage(data), Integer.valueOf(data)}) : (type == 1 ? String.format("@%s%08X", new Object[]{getPackage(data), Integer.valueOf(data)}) : (type == 4 ? String.valueOf(Float.intBitsToFloat(data)) : (type == 17 ? String.format("0x%08X", new Object[]{Integer.valueOf(data)}) : (type == 18 ? (data != 0 ? "true" : "false") : (type == 5 ? Float.toString(complexToFloat(data)) + DIMENSION_UNITS[data & 15] : (type == 6 ? Float.toString(complexToFloat(data)) + FRACTION_UNITS[data & 15] : (type >= 28 && type <= 31 ? String.format("#%08X", new Object[]{Integer.valueOf(data)}) : (type >= 16 && type <= 31 ? String.valueOf(data) : String.format("<0x%X, type 0x%02X>", new Object[]{Integer.valueOf(data), Integer.valueOf(type)}))))))))));
     }
 
     private static String getPackage(int id) {
-        return id >>> 24 == 1?"android:":"";
+        return id >>> 24 == 1 ? "android:" : "";
     }
 
     private static void log(StringBuilder xmlSb, String format, Object... arguments) {
@@ -123,13 +120,13 @@ class XmlManifestReader {
 
     private static void log(boolean newLine, StringBuilder xmlSb, String format, Object... arguments) {
         xmlSb.append(String.format(format, arguments));
-        if(newLine) {
+        if (newLine) {
             xmlSb.append("\n");
         }
 
     }
 
     private static float complexToFloat(int complex) {
-        return (float)(complex & -256) * RADIX_MULTS[complex >> 4 & 3];
+        return (float) (complex & -256) * RADIX_MULTS[complex >> 4 & 3];
     }
 }

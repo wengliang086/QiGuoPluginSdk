@@ -8,7 +8,6 @@ package com.kding.core.plugin.environment;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.Instrumentation;
-import android.app.Instrumentation.ActivityResult;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.ContextWrapper;
@@ -20,17 +19,15 @@ import android.os.IBinder;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.Window;
+
 import com.kding.core.plugin.PluginManager;
 import com.kding.core.plugin.delegate.DelegateInstrumentation;
-import com.kding.core.plugin.environment.CreateActivityData;
-import com.kding.core.plugin.environment.PlugInfo;
-import com.kding.core.plugin.environment.PluginClassLoader;
-import com.kding.core.plugin.environment.PluginContext;
 import com.kding.core.plugin.reflect.Reflect;
 import com.kding.core.plugin.reflect.ReflectException;
 import com.kding.core.plugin.utils.LogUtils;
 import com.kding.core.plugin.verify.PluginNotFoundException;
 import com.kding.core.plugin.widget.LayoutInflaterWrapper;
+
 import java.lang.reflect.Field;
 
 public class PluginInstrumentation extends DelegateInstrumentation {
@@ -41,8 +38,8 @@ public class PluginInstrumentation extends DelegateInstrumentation {
     }
 
     public Activity newActivity(ClassLoader cl, String className, Intent intent) throws InstantiationException, IllegalAccessException, ClassNotFoundException {
-        CreateActivityData activityData = (CreateActivityData)intent.getSerializableExtra("flag_act_fp");
-        if(activityData != null && PluginManager.getSingleton().getPlugins().size() > 0) {
+        CreateActivityData activityData = (CreateActivityData) intent.getSerializableExtra("flag_act_fp");
+        if (activityData != null && PluginManager.getSingleton().getPlugins().size() > 0) {
             PlugInfo plugInfo;
             try {
                 LogUtils.d(this.getClass().getSimpleName(), "+++ Start Plugin Activity => " + activityData.pluginPkg + " / " + activityData.activityName);
@@ -53,7 +50,7 @@ public class PluginInstrumentation extends DelegateInstrumentation {
                 throw new IllegalAccessException("Cannot get plugin Info : " + activityData.pluginPkg);
             }
 
-            if(activityData.activityName != null) {
+            if (activityData.activityName != null) {
                 className = activityData.activityName;
                 cl = plugInfo.getClassLoader();
             }
@@ -64,7 +61,7 @@ public class PluginInstrumentation extends DelegateInstrumentation {
 
     public void callActivityOnCreate(Activity activity, Bundle icicle) {
         this.lookupActivityInPlugin(activity);
-        if(this.currentPlugin != null) {
+        if (this.currentPlugin != null) {
             Context baseContext = activity.getBaseContext();
             PluginContext pluginContext = new PluginContext(baseContext, this.currentPlugin);
 
@@ -89,9 +86,9 @@ public class PluginInstrumentation extends DelegateInstrumentation {
             }
 
             ActivityInfo activityInfo1 = this.currentPlugin.findActivityByClassName(activity.getClass().getName());
-            if(activityInfo1 != null) {
+            if (activityInfo1 != null) {
                 int window = activityInfo1.getThemeResource();
-                if(window != 0) {
+                if (window != 0) {
                     boolean windowRef = true;
 
                     try {
@@ -102,7 +99,7 @@ public class PluginInstrumentation extends DelegateInstrumentation {
                         var10.printStackTrace();
                     }
 
-                    if(windowRef) {
+                    if (windowRef) {
                         changeActivityInfo(activityInfo1, activity);
                         activity.setTheme(window);
                         activity.setFinishOnTouchOutside(true);
@@ -110,13 +107,13 @@ public class PluginInstrumentation extends DelegateInstrumentation {
                 }
             }
 
-            if(Build.MODEL.startsWith("GT")) {
+            if (Build.MODEL.startsWith("GT")) {
                 Window window1 = activity.getWindow();
                 Reflect windowRef1 = Reflect.on(window1);
 
                 try {
                     LayoutInflater e1 = window1.getLayoutInflater();
-                    if(!(e1 instanceof LayoutInflaterWrapper)) {
+                    if (!(e1 instanceof LayoutInflaterWrapper)) {
                         windowRef1.set("mLayoutInflater", new LayoutInflaterWrapper(e1));
                     }
                 } catch (Throwable var9) {
@@ -157,8 +154,8 @@ public class PluginInstrumentation extends DelegateInstrumentation {
 
     private void lookupActivityInPlugin(Activity activity) {
         ClassLoader classLoader = activity.getClass().getClassLoader();
-        if(classLoader instanceof PluginClassLoader) {
-            this.currentPlugin = ((PluginClassLoader)classLoader).getPlugInfo();
+        if (classLoader instanceof PluginClassLoader) {
+            this.currentPlugin = ((PluginClassLoader) classLoader).getPlugInfo();
         } else {
             this.currentPlugin = null;
         }
@@ -166,15 +163,15 @@ public class PluginInstrumentation extends DelegateInstrumentation {
     }
 
     private void replaceIntentTargetIfNeed(Context from, Intent intent) {
-        if(!intent.hasExtra("flag_act_fp") && this.currentPlugin != null) {
+        if (!intent.hasExtra("flag_act_fp") && this.currentPlugin != null) {
             ComponentName componentName = intent.getComponent();
-            if(componentName != null) {
+            if (componentName != null) {
                 String pkgName = componentName.getPackageName();
                 String activityName = componentName.getClassName();
-                if(pkgName != null) {
+                if (pkgName != null) {
                     CreateActivityData createActivityData = new CreateActivityData(activityName, this.currentPlugin.getPackageName());
                     ActivityInfo activityInfo = this.currentPlugin.findActivityByClassName(activityName);
-                    if(activityInfo != null) {
+                    if (activityInfo != null) {
                         intent.setClass(from, PluginManager.getSingleton().getActivitySelector().selectDynamicActivity(activityInfo));
                         intent.putExtra("flag_act_fp", createActivityData);
                         intent.setExtrasClassLoader(this.currentPlugin.getClassLoader());

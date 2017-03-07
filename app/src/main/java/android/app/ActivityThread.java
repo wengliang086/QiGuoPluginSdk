@@ -5,7 +5,6 @@
 
 package android.app;
 
-import android.app.LoadedApk;
 import android.content.pm.ApplicationInfo;
 
 public final class ActivityThread {
