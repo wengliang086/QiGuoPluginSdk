@@ -1,31 +1,26 @@
-/*    */ package com.kding.core.plugin.environment;
-/*    */ 
-/*    */ import android.annotation.TargetApi;
-/*    */ import dalvik.system.DexClassLoader;
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ 
-/*    */ @TargetApi(3)
-/*    */ public class PluginClassLoader
-/*    */   extends DexClassLoader
-/*    */ {
-/*    */   protected PlugInfo plugInfo;
-/*    */   
-/*    */   public PluginClassLoader(PlugInfo plugInfo, String dexPath, String optimizedDirectory, String libraryPath, ClassLoader parent)
-/*    */   {
-/* 18 */     super(dexPath, optimizedDirectory, libraryPath, parent);
-/* 19 */     this.plugInfo = plugInfo;
-/*    */   }
-/*    */   
-/*    */   public PlugInfo getPlugInfo() {
-/* 23 */     return this.plugInfo;
-/*    */   }
-/*    */ }
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
 
+package com.kding.core.plugin.environment;
 
-/* Location:              C:\Users\Administrator\Desktop\QiguoSdk.jar!\com\kding\core\plugin\environment\PluginClassLoader.class
- * Java compiler version: 7 (51.0)
- * JD-Core Version:       0.7.1
- */
+import android.annotation.TargetApi;
+
+import com.kding.core.plugin.environment.PlugInfo;
+
+import dalvik.system.DexClassLoader;
+
+@TargetApi(3)
+public class PluginClassLoader extends DexClassLoader {
+    protected PlugInfo plugInfo;
+
+    public PluginClassLoader(PlugInfo plugInfo, String dexPath, String optimizedDirectory, String libraryPath, ClassLoader parent) {
+        super(dexPath, optimizedDirectory, libraryPath, parent);
+        this.plugInfo = plugInfo;
+    }
+
+    public PlugInfo getPlugInfo() {
+        return this.plugInfo;
+    }
+}

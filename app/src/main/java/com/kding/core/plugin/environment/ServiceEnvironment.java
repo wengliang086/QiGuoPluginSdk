@@ -1,9 +1,11 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by Fernflower decompiler)
+//
+
 package com.kding.core.plugin.environment;
 
-public class ServiceEnvironment {}
-
-
-/* Location:              C:\Users\Administrator\Desktop\QiguoSdk.jar!\com\kding\core\plugin\environment\ServiceEnvironment.class
- * Java compiler version: 7 (51.0)
- * JD-Core Version:       0.7.1
- */
+public class ServiceEnvironment {
+    public ServiceEnvironment() {
+    }
+}
